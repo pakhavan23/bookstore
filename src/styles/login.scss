@@ -1,0 +1,60 @@
+@import "utils";
+
+.login-inputs{
+    height: 30%;
+    justify-content: center;
+}
+.login-inputs input{
+    height: 17%;
+}
+.login-inputs input:first-child{
+    margin-bottom: 20px;
+}
+.log-switch{
+    @include flex-col;
+    justify-content: center;
+    width: $full;
+    height: 15%;
+}
+.log-switch p{
+    font-size: 15px;
+    font-weight: 600;
+}
+.log-link{
+    color: red;
+}
+.log-link:hover{
+    transition: 0.3s;
+    color: #8200aa;
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 720px){
+    .login-inputs input{
+        height: 19%;
+    }
+    .log-switch p{
+        font-size: 17px;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 720px){
+    .login-inputs input{
+        height: 19%;
+    }
+    .log-switch p{
+        font-size: 17px;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 1500px){
+    .login-inputs input{
+        height: 20.5%;
+        border-radius: 23px;
+    }
+    .login-inputs input:first-child{
+        margin-bottom: 23px;
+    }
+    .log-switch p{
+        font-size: 21px;
+    }
+}

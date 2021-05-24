@@ -1,0 +1,24 @@
+//colors
+$white: #ffffff;
+$black: #000000;
+$yellow: #ffdd04;
+$pastelBlue: #85E3FF;
+
+//mixins
+@mixin flex-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+@mixin flex-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@mixin btn-hover{
+    transition: 0.15s;
+    background-color: $pastelBlue;
+}
+
+//sizes
+$full: 100%;

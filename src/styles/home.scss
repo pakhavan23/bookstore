@@ -1,0 +1,388 @@
+@import "utils";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body{
+    width: $full;
+    height: 100vh;
+    min-height: 600px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#root{
+    width: $full;
+    height: $full;
+}
+textarea:focus , input:focus , button:focus{
+    outline: none;
+}
+.wrapper{
+    @include flex-col;
+    justify-content: flex-start;
+    width: $full;
+    height: $full;
+    position: relative;
+    background-image: url('../images/background.png');
+    background-size: cover;
+}
+.menu{
+    @include flex-row;
+    justify-content: flex-end;
+    width: $full;
+    height: 8%;
+}
+.menu-item{
+    @include flex-row;
+    justify-content: center;
+    text-align: center;
+    width: 20%;
+    height: 58%;
+    background-color: $yellow;
+    color: $black;
+    font-weight: bold;
+    font-size: 3.8vw;
+    margin: 0 5px;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 2px 2px $black;
+}
+.menu-item:last-child{
+    margin-right: 10px;
+}
+.menu-item:hover , .enter-btn:hover{
+    @include btn-hover;
+}
+.main-logo{
+    @include flex-row;
+    justify-content: center;
+    height: 92%;
+    width: $full;
+}
+.bookbox-logo{
+    @include flex-row;
+    align-items: flex-start;
+    justify-content: center;
+    height: 25%;
+    width: 30%;
+}
+.bookbox-logo img{
+    height: 85px;
+    width: 70px;
+}
+.bookbox-info{
+    @include flex-col;
+    justify-content: flex-start;
+    height: 30%;
+    width: 55%;
+}
+.bookbox-info h1{
+    @include flex-row;
+    height: 25%;
+    width: $full;
+    color: $white;
+    font-family: Copperplate Gothic , Segoe UI;
+    font-weight: bold;
+    font-size: 9vw;
+    letter-spacing: 2px;
+}
+.bookbox-info p{
+    @include flex-row;
+    height: 10%;
+    width: $full;
+    color: $white;
+    font-family: Consolas;
+    font-size: 4.3vw;
+    font-weight: 600;
+}
+.enter-btn{
+    @include flex-row;
+    justify-content: center;
+    text-align: center;
+    height: 22%;
+    width: 60%;
+    background-color: $yellow;
+    color: $black;
+    font-weight: bold;
+    font-size: 4.3vw;
+    border-radius: 18px;
+    border: none;
+    box-shadow: 0 2px 2px $black;
+    margin-top: 20px;
+}
+footer{
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    color: $white;
+    font-size: 10px;
+    font-weight: 600;
+}
+.footer-link{
+    color: $yellow;
+}
+.footer-link:hover{
+    transition: 0.15s;
+    color: $pastelBlue;
+}
+.Toastify__toast{                                                                                         /*adjusting notification bar*/
+    width: 150px;
+    min-height: 50px;
+    margin-top: 15px;
+    margin-right: 15px;
+    font-size: 2.3vw;
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 480px){
+    .menu{
+        height: 9%;
+    }
+    .menu-item{
+        border-radius: 18px;
+        width: 18%;
+        font-size: 3.1vw;
+    }
+    .main-logo{
+        height: 91%;
+    }
+    .bookbox-logo img{
+        width: 100px;
+        height: 120px;
+    }
+    .bookbox-info h1{
+        height: 30%;
+    }
+    .bookbox-info p{
+        height: 12%;
+    }
+    .enter-btn{
+        height: 25%;
+        border-radius: 22px;
+    }
+    .Toastify__toast{
+        width: 250px;
+        height: 80px;
+        font-size: 3vw;
+        margin-right: 0;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 600px){
+    .menu-item{
+        border-radius: 18px;
+        width: 15%;
+        font-size: 2.8vw;
+    }
+    .bookbox-logo{
+        height: 29%;
+    }
+    .bookbox-logo img{
+        width: 130px;
+        height: 160px;
+    }
+    .bookbox-info h1{
+        height: 35%;
+        font-size: 8vw;
+    }
+    .bookbox-info p{
+        font-size: 4vw;
+    }
+    .enter-btn{
+        align-self: flex-start;
+        margin-left: 20px;
+        margin-top: 30px;
+        height: 27%;
+        width: 55%;
+        border-radius: 25px;
+        font-size: 3.8vw;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 720px){
+    .menu-item{
+        width: 13%;
+        font-size: 2.3vw;
+    }
+    .bookbox-logo img{
+        width: 150px;
+        height: 180px;
+    }
+    .bookbox-info h1{
+        font-size: 7.8vw;
+    }
+    .bookbox-info p{
+        font-size: 3vw;
+    }
+    .enter-btn{
+        width: 50%;
+        font-size: 3.2vw;
+    }
+    footer{
+        font-size: 11px;
+    }
+    .Toastify__toast{
+        width: 250px;
+        height: 80px;
+        font-size: 2.3vw;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 850px){
+    .menu-item{
+        width: 11%;
+        font-size: 2vw;
+    }
+    .bookbox-logo img{
+        width: 180px;
+        height: 210px;
+    }
+    .bookbox-info h1{
+        font-size: 7.5vw;
+    }
+    .bookbox-info p{
+        font-size: 2.5vw;
+    }
+    .enter-btn{
+        margin-top: 45px;
+        width: 46%;
+        font-size: 2.8vw;
+    }
+    .Toastify__toast{
+        font-size: 2vw;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 960px){
+    .menu-item{
+        width: 10.5%;
+        font-size: 1.7vw;
+    }
+    .bookbox-logo{
+        height: 30%;
+    }
+    .bookbox-logo img{
+        width: 190px;
+        height: 245px;
+    }
+    .bookbox-info h1{
+        height: 40%;
+        font-size: 7.3vw;
+    }
+    .bookbox-info p{
+        font-size: 2.3vw;
+    }
+    .enter-btn{
+        margin-top: 40px;
+        height: 27%;
+        width: 37%;
+        font-size: 2.4vw;
+    }
+    .Toastify__toast{
+        width: 300px;
+        height: 80px;
+        font-size: 1.9vw;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 1140px){
+    .menu-item{
+        width: 9%;
+        font-size: 1.5vw;
+    }
+    .bookbox-logo{
+        height: 32%;
+        width: 25%;
+    }
+    .bookbox-logo img{
+        width: 200px;
+        height: 270px;
+    }
+    .bookbox-info{
+        height: 34%;
+    }
+    .bookbox-info h1{
+        height: 42%;
+        font-size: 7.3vw;
+    }
+    .bookbox-info p{
+        font-size: 2.2vw;
+    }
+    .enter-btn{
+        margin-top: 40px;
+        height: 25%;
+        width: 32%;
+        font-size: 2vw;
+        border-radius: 28px;
+    }
+    footer{
+        font-size: 12px;
+    }
+    .Toastify__toast{
+        font-size: 1.5vw;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 1300px){
+    .menu-item{
+        width: 8%;
+        font-size: 1.3vw;
+    }
+    .bookbox-logo{
+        height: 32%;
+        width: 22%;
+    }
+    .bookbox-info{
+        height: 37%;
+    }
+    .bookbox-info h1{
+        height: 42%;
+        font-size: 7.1vw;
+    }
+    .bookbox-info p{
+        font-size: 2.4vw;
+    }
+    .enter-btn{
+        width: 30%;
+        font-size: 1.9vw;
+    }
+    .Toastify__toast{
+        font-size: 1.3vw;
+    } 
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 1500px){
+    .menu-item{
+        width: 6.4%;
+        font-size: 1.14vw;
+    }
+    .bookbox-logo{
+        height: 37%;
+        width: 21%;
+    }
+    .bookbox-logo img{
+        width: 230px;
+        height: 310px;
+    }
+    .bookbox-info{
+        height: 45%;
+    }
+    .bookbox-info h1{
+        height: 42%;
+        font-size: 7vw;
+    }
+    .bookbox-info p{
+        font-size: 2.3vw;
+    }
+    .enter-btn{
+        margin-top: 50px;
+        height: 22%;
+        width: 27%;
+        font-size: 1.7vw;
+        border-radius: 33px;
+    }
+     .Toastify__toast{
+        font-size: 1.1vw;
+    }
+}

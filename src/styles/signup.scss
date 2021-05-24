@@ -1,0 +1,268 @@
+@import "utils";
+
+.rg-wrapper{
+    justify-content: center;
+}
+.register{
+    width: $full;
+    height: 85%;
+    background-color: rgba(255, 255, 255, 0.664);
+}
+.rg-title{
+    @include flex-col;
+    justify-content: center;
+    width: $full;
+    height: 13%;
+}
+.rg-title h3{
+    @include flex-col;
+    justify-content: center;
+    width: $full;
+    height: 50%;
+    color: $black;
+    font-family: Copperplate Gothic , Segoe UI;
+    font-weight: bold;
+    font-size: 8vw;
+    letter-spacing: 2px;
+}
+.rg-title p{
+    @include flex-col;
+    justify-content: center;
+    width: $full;
+    height: 30%;
+    color: $black;
+    font-family: Consolas;
+    font-weight: bold;
+    font-size: 4vw;
+}
+.sgn-inputs{
+    @include flex-col;
+    justify-content: space-evenly;
+    height: 70%;
+    width: $full;
+}
+.sinput{
+    height: 7%;
+    width: 80%;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 3px $black;
+    padding-left: 7px;
+    font-family: Corbel ,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 3.3vw;
+}
+.sgnbtn{
+    @include flex-col;
+    justify-content: center;
+    height: 7%;
+    width: $full;
+}
+.sgn-btn{
+    @include flex-row;
+    justify-content: center;
+    text-align: center;
+    height: 92%;
+    width: 28%;
+    background-color: $yellow;
+    color: $black;
+    font-weight: bold;
+    font-size: 4vw;
+    border-radius: 18px;
+    border: none;
+    box-shadow: 0 2px 2px $black;
+    cursor: pointer;
+}
+.sgn-btn:hover{
+    @include btn-hover;
+}
+.rg-home{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+.rg-home img{
+    width: 26px;
+    height: 26px;
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 480px){
+    .rg-title h3{
+        font-size: 7.4vw;
+    }
+    .rg-title p{
+        font-size: 3.5vw;
+    }
+    .sgn-inputs{
+        height: 72%;
+    }
+    .sinput{
+        border-radius: 15px;
+        font-size: 3vw;
+        padding-left: 9px;
+    }
+    .sgnbtn{
+        height: 8%;
+    }
+    .sgn-btn{
+        height: 85%;
+        width: 23%;
+        border-radius: 22px;
+        font-size: 3.5vw;
+    }
+    .rg-home{
+        top: 6px;
+        left: 6px;
+    }
+    .rg-home img{
+        width: 30px;
+        height: 30px;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 600px){
+    .rg-title{
+        height: 13.5%;
+    }
+    .rg-title h3{
+        font-size: 6.1vw;
+    }
+    .rg-title p{
+        font-size: 2.7vw;
+    }
+    .sinput{
+        font-size: 2.5vw;
+    }
+    .sgn-btn{
+        height: 85%;
+        width: 20%;
+        font-size: 2.8vw;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 720px){
+    .rg-title{
+        height: 13.8%;
+    }
+    .rg-title h3{
+        font-size: 5.7vw;
+    }
+    .rg-title p{
+        font-size: 2.3vw;
+    }
+    .sinput{
+        height: 7.5%;
+        width: 77%;
+        font-size: 2.1vw;
+        border-radius: 18px;
+    }
+    .sgn-btn{
+        height: 85%;
+        width: 16%;
+        font-size: 2.35vw;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 850px){
+    .rg-title{
+        height: 14.2%;
+    }
+    .rg-title h3{
+        font-size: 5vw;
+    }
+    .rg-title p{
+        font-size: 2vw;
+    }
+    .sinput{
+        width: 74%;
+        font-size: 1.95vw;
+    }
+    .sgn-btn{
+        height: 87%;
+        width: 14.5%;
+        font-size: 2vw;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 960px){
+    .register{
+        height: $full;
+        width: 80%;
+    }
+    .rg-title{
+        height: 14.3%;
+    }
+    .rg-title h3{
+        font-size: 5vw;
+    }
+    .rg-title p{
+        font-size: 1.9vw;
+    }
+    .sinput{
+        width: 70%;
+        height: 7%;
+        font-size: 1.8vw;
+    }
+    .sgn-btn{
+        height: 80%;
+        width: 14.3%;
+        font-size: 1.8vw;
+    }
+    .rg-home img{
+        width: 40px;
+        height: 40px;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 1140px){
+    .rg-title h3{
+        font-size: 4.5vw;
+    }
+    .rg-title p{
+        font-size: 1.7vw;
+    }
+    .sinput{
+        font-size: 1.5vw;
+        padding-left: 11px;
+    }
+    .sgn-btn{
+        height: 79%;
+        width: 13.5%;
+        font-size: 1.5vw;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 1300px){
+    .rg-title h3{
+        font-size: 3.8vw;
+    }
+    .rg-title p{
+        font-size: 1.5vw;
+    }
+    .sinput{
+        font-size: 1.3vw;
+        width: 65%;
+    }
+    .sgn-btn{
+        width: 12%;
+        font-size: 1.3vw;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 1500px){
+    .rg-title h3{
+        font-size: 3.3vw;
+    }
+    .rg-title p{
+        font-size: 1.2vw;
+    }
+    .sinput{
+        font-size: 1.05vw;
+        height: 7.6%;
+        border-radius: 23px;
+        width: 57%;
+    }
+    .sgn-btn{
+        width: 10.7%;
+        font-size: 1.2vw;
+    }
+}
