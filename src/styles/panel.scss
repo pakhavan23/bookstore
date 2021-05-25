@@ -1,0 +1,605 @@
+@import "utils";
+
+.panel-wrapper{
+    justify-content: center;
+}
+.panel{
+    @include flex-row;
+    align-items: flex-start;
+    width: 88%;
+    height: 88%;
+    background-color: rgba(255, 255, 255, 0.795);
+    border-radius: 10px;
+    box-shadow: 0 3px 4px $black;
+    position: relative;
+    overflow: hidden;
+}
+.profilepic{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #6b6b6b;
+    cursor: pointer;
+}
+.pcontainer{
+    @include flex-col;
+    align-items: flex-start;
+    width: $full;
+    height: $full;
+}
+.ptitle1 , .ptitle2{
+    @include flex-col;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 6px;
+    width: 90%;
+    height: 6%;
+    font-size: 5vw;
+    font-family: Corbel;
+}
+.psearch{
+    @include flex-col;
+    justify-content: center;
+    height: 9%;
+    width: $full;
+}
+.psbar{
+    @include flex-row;
+    justify-content: flex-end;
+    width: 80%;
+    height: 55%;
+    background-color: #ffffffda;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 1px 2px $black
+}
+.psbar textarea{
+    @include flex-col;
+    align-items: center;
+    height: $full;
+    width: $full;
+    border: none;
+    border-radius: 15px;
+    resize: none;
+    padding-left: 10px;
+    font-family: Corbel;
+    font-size: 3.5vw;
+}
+.psbar img{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    right: 5px;
+    cursor: pointer;
+}
+.pcat{
+    @include flex-col;
+    width: $full;
+    height: 30%;
+}
+.prow{
+    @include flex-row;
+    justify-content: space-evenly;
+    width: $full;
+    height: 50%;
+}
+.pitem{
+    @include flex-col;
+    justify-content: center;
+    cursor: pointer;
+    height: 90%;
+    width: 20%;
+    color: $orange;
+}
+.pitem img{
+    width: 35px;
+    height: 38px;
+}
+.pitem p{
+    @include flex-col;
+    justify-content: center;
+    height: 32%;
+    width: $full;
+    font-weight: 600;
+    font-size: 3.4vw;
+}
+.pitem:hover{
+    transition: 0.15s;
+    color: $pastelBlue;
+}
+.ptitle2{
+    height: 10%;
+    font-size: 4vw;
+    padding-left: 8px;
+}
+.prec{
+    @include flex-row;
+    justify-content: center;
+    width: $full;
+    height: 20%;
+}
+.prec-item{
+    @include flex-col;
+    width: 23%;
+    height: $full;
+}
+.prec-img{
+    height: 62px;
+    width: 53px;
+    background-color: $white;
+}
+.prec-item h3 , .prec-item p{
+    @include flex-col;
+    justify-content: center;
+    height: 20%;
+    width: $full;
+    color: $orange;
+    font-size: 3.7vw;
+}
+.prec-item p{
+    height: 14%;
+    font-size: 3.6vw;
+}
+.sidebar{
+    @include flex-col;
+    height: $full;
+    width: 35%;
+    position: absolute;
+    right: 0;
+    background-color: $sidebar;
+    z-index: 4;
+    border-radius: 10px;
+    box-shadow: -2px 0 3px #757474;
+    animation-name: open;
+    animation-duration: 0.35s;
+    animation-timing-function: ease-in;
+}
+@keyframes open {
+    from{right: -50%;}
+    to{right: 0;}
+}
+.scl{
+    @include flex-col;
+    height: $full;
+    width: 35%;
+    position: absolute;
+    right: -50%;
+    background-color: $sidebar;
+    z-index: 4;
+    animation-name: close;
+    animation-duration: 0.35s;
+    animation-timing-function: ease-in;
+}
+@keyframes close {
+    from{right: 0;}
+    to{right: -50%}
+}
+.sfr{
+    display: none;
+}
+.spic{
+    @include flex-col;
+    align-self: center;
+    background-color: #6b6b6b;
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    margin-top: 10px;
+}
+.sidebar h3 , .scl h3 ,.sfr h3{
+    @include flex-col;
+    justify-content: center;
+    text-align: center;
+    width: $full;
+    height: 5%;
+    font-size: 4.8vw;
+    font-weight: 600;
+}
+.sitems{    
+    @include flex-col;
+    height: 60%;
+    width: $full;
+    margin-top: 25px;
+}
+.sitem{
+    @include flex-col;
+    justify-content: center;
+    height: 14%;
+    width: $full;
+    font-size: 4.1vw;
+    font-weight: 600;
+    color: #f8af6b;
+    border-bottom: 1px solid #fce3d8;
+    cursor: pointer;
+}
+.sitem:hover{
+    transition: 0.25s;
+    background-color: $yellow;
+    color: $white;
+}
+.results-c{
+    @include flex-row;
+    align-items: flex-start;
+    position: relative;
+    flex-flow: row wrap;
+    overflow: hidden;
+    height: 89%;
+    width: $full;
+    padding: 20px 5px 0 5px;
+}
+.res-item{
+    height: 20%;
+    width: 20%;
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 480px){
+    .profilepic{
+        width: 40px;
+        height: 40px;
+        top: 8px;
+        right: 8px;
+    }
+    .ptitle1{
+        padding-left: 10px;
+        font-size: 4.5vw;
+    }
+    .psearch{
+        height: 11%;
+    }
+    .psbar{
+        height: 41%;
+    }
+    .psbar img{
+        right: 8px;
+        width: 25px;
+        height: 25px;
+    }
+    .pcat{
+        height: 33%;
+    }
+    .pitem img{
+        height: 52px;
+        width: 43px;
+    }
+    .pitem p{
+        font-size: 3.2vw;
+    }
+    .ptitle2{
+        font-size: 3.8vw;
+        padding-left: 10px;
+    }
+    .prec-img{
+        height: 70px;
+        width: 63px;
+    }
+    .prec-item h3{
+        font-size: 3.3vw;
+    }
+    .prec-item p{
+        font-size: 3vw;
+    }
+    .spic{
+        height: 75px;
+        width: 75px;
+    }
+    .sidebar h3, .scl h3{
+        font-size: 4.3vw;
+    }
+    .sitem{
+        height: 16%;
+        font-size: 3.7vw;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 600px){
+    .profilepic{
+        width: 42px;
+        height: 42px;
+        top: 9px;
+        right: 9px;
+    }
+    .ptitle1{
+        padding-left: 12px;
+        font-size: 3.6vw;
+    }
+    .psearch{
+        height: 12%;
+    }
+    .psbar{
+        height: 40%;
+    }
+    .psbar textarea{
+        font-size: 2.6vw;
+    }
+    .psbar img{
+        width: 26px;
+        height: 26px;
+    }
+    .pitem img{
+        height: 60px;
+        width: 50px;
+    }
+    .pitem p{
+        font-size: 2.7vw;
+    }
+    .ptitle2{
+        font-size: 3.3vw;
+        padding-left: 12px;
+    }
+    .prec-img{
+        height: 74px;
+        width: 67px;
+    }
+    .prec-item h3{
+        font-size: 2.7vw;
+    }
+    .prec-item p{
+        font-size: 2.5vw;
+    }
+    .spic{
+        height: 75px;
+        width: 75px;
+    }
+    .sidebar h3, .scl h3{
+        font-size: 4.3vw;
+    }
+    .sitem{
+        height: 16%;
+        font-size: 3.7vw;
+    }
+    .results-c{
+        padding: 40px 8px 0 8px;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 720px){
+    .profilepic{
+        width: 45px;
+        height: 45px;
+    }
+    .ptitle1{
+        font-size: 3.1vw;
+    }
+    .psbar textarea{
+        font-size: 2.2vw;
+    }
+    .pcat{
+        height: 35%;
+    }
+    .pitem img{
+        height: 70px;
+        width: 60px;
+    }
+    .pitem p{
+        font-size: 2.4vw;
+    }
+    .ptitle2{
+        font-size: 3vw;
+    }
+    .prec{
+        height: 23%;
+    }
+    .prec-img{
+        height: 75px;
+        width: 68px;
+    }
+    .prec-item h3{
+        font-size: 2.3vw;
+    }
+    .prec-item p{
+        font-size: 2.1vw;
+        height: 9%;
+    }
+    .spic{
+        margin-top: 15px;
+    }
+    .sidebar h3, .scl h3{
+        font-size: 3.2vw;
+        height: 6%;
+    }
+    .sitem{
+        height: 17%;
+        font-size: 2.6vw;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 960px){
+    .profilepic{
+        display: none;
+    }
+    .panel{
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .pcontainer{
+        width: 80%;
+    }
+    .sidebar , .scl , .sfr{
+        display: flex;
+        @include flex-col;
+        height: $full;
+        width: 20%;
+        position: absolute;
+        left: 0;
+        background-color: #ffffff98;
+        z-index: 4;
+        border-radius: 10px;
+        box-shadow: 2px 0 3px #949494;
+    }
+    .ptitle1{
+        font-size: 2.6vw;
+        height: 6.5%;
+    }
+    .psbar{
+        height: 42%;
+    }
+    .psbar textarea{
+        font-size: 1.6vw;
+    }
+    .pcat{
+        height: 37%;
+    }
+    .pitem p{
+        font-size: 1.8vw;
+    }
+    .ptitle2{
+        font-size: 2.3vw;
+    }
+    .prec{
+        height: 25%;
+    }
+    .prec-img{
+        height: 77px;
+        width: 72px;
+    }
+    .prec-item h3{
+        font-size: 1.8vw;
+    }
+    .prec-item p{
+        font-size: 1.5vw;
+    }
+    .spic{
+        margin-top: 17px;
+    }
+    .sidebar h3, .scl h3 , .sfr h3{
+        font-size: 2.5vw;
+        height: 6.3%;
+    }
+    .sitems{
+        margin-top: 36px;
+    }
+    .sitem{
+        height: 18%;
+        font-size: 2vw;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 1140px){
+    .ptitle1{
+        padding-left: 15px;
+        font-size: 2.2vw;
+        height: 6.8%;
+    }
+    .psbar{
+        width: 73%;
+        height: 43%;
+    }
+    .psbar textarea{
+        font-size: 1.3vw;
+    }
+    .pcat{
+        height: 39%;
+    }
+    .pitem p{
+        font-size: 1.5vw;
+    }
+    .ptitle2{
+        font-size: 1.9vw;
+        padding-left: 15px;
+    }
+    .prec{
+        height: 27%;
+    }
+    .prec-item h3{
+        font-size: 1.4vw;
+    }
+    .prec-item p{
+        font-size: 1.3vw;
+        height: 6%;
+    }
+    .spic{
+        margin-top: 19px;
+        width: 90px;
+        height: 90px;
+    }
+    .sidebar h3, .scl h3 , .sfr h3{
+        font-size: 2vw;
+        height: 7%;
+    }
+    .sitem{
+        height: 19%;
+        font-size: 1.8vw;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 1300px){
+    .ptitle1{
+        font-size: 1.8vw;
+        height: 7%;
+    }
+    .psbar{
+        width: 66%;
+        height: 48%;
+        border-radius: 27px;
+    }
+    .psbar textarea{
+        font-size: 1.1vw;
+    }
+    .pitem p{
+        font-size: 1.2vw;
+    }
+    .ptitle2{
+        font-size: 1.6vw;
+    }
+    .prec-item h3{
+        font-size: 1.2vw;
+    }
+    .prec-item p{
+        font-size: 1.1vw;
+        height: 5%;
+    }
+    .spic{
+        margin-top: 23px;
+        width: 100px;
+        height: 100px;
+    }
+    .sidebar h3, .scl h3 , .sfr h3{
+        font-size: 1.7vw;
+    }
+    .sitem{
+        height: 19.5%;
+        font-size: 1.6vw;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 1500px){
+    .ptitle1{
+        font-size: 1.55vw;
+        height: 7.4%;
+    }
+    .psbar{
+        width: 65%;
+        height: 49%;
+        border-radius: 29px;
+    }
+    .psbar textarea{
+        font-size: 1vw;
+    }
+    .pitem p{
+        font-size: 1.05vw;
+    }
+    .ptitle2{
+        font-size: 1.35vw;
+    }
+    .prec-item h3{
+        font-size: 1vw;
+    }
+    .prec-item p{
+        font-size: 0.95vw;
+    }
+    .spic{
+        margin-top: 20px;
+        width: 110px;
+        height: 110px;
+    }
+    .sidebar h3, .scl h3 , .sfr h3{
+        font-size: 1.5vw;
+    }
+    .sitem{
+        font-size: 1.35vw;
+    }
+}

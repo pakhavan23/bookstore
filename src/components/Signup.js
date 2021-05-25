@@ -31,6 +31,7 @@ class Signup extends React.Component{
     sendInfo = (event) => {
         event.preventDefault();
         let errors = [];
+        const emailRegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if(!this.state.email){
             errors = [...errors , {error: "please insert your email"}]
         }
@@ -56,7 +57,10 @@ class Signup extends React.Component{
             errors = [...errors , {error: "please re-enter your password"}]
         }
         if(this.state.password !== this.state.passwordRepeat){
-            errors = [...errors , {error:"passwords don't match"}]
+            errors = [...errors , {error: "passwords don't match"}]
+        }
+        if(this.state.email && !emailRegExp.test(String(this.state.email).toLowerCase())){
+            errors = [...errors , {error: "The email address is invalid"}]
         }
         if(errors.length > 0){
             for(let i = 0 ; i < errors.length ; i++){
