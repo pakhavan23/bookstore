@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import book from '../images/book.png';
 import search from '../images/search.png';
-import '../styles/panel.scss';
 import Results from './Results';
+import Book from './Book';
+import Profile from './Profile';
+import '../styles/panel.scss';
 
 const Panel = () => {
 
@@ -21,7 +23,7 @@ const Panel = () => {
                     </section>
                     <h3>Name</h3>
                     <section className="sitems">
-                        <span className="sitem">Profile</span>
+                        <span className="sitem" onClick={() => changeComponent('profile')}>Profile</span>
                         <span className="sitem">Cart</span>
                         <span className="sitem">History</span>
                         <span className="sitem">Sign out</span>
@@ -76,7 +78,7 @@ const Panel = () => {
                       </section>
                       <h3 className="ptitle2">Recent purchases</h3>
                       <section className="prec">
-                          <span className="prec-item">
+                          <span className="prec-item" onClick={() => changeComponent('book')}>
                               <section className="prec-img">
   
                               </section>
@@ -108,6 +110,10 @@ const Panel = () => {
                     </section>
                 : component === 'results' ?
                     <Results />
+                : component === 'book' ?
+                    <Book />
+                :component === 'profile' ?
+                    <Profile />
                 : null
                 }
             </section>

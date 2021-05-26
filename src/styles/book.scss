@@ -1,0 +1,249 @@
+@import "utils";
+
+.book-name{
+    margin-top: 25px;
+    @include flex-row;
+    align-items: flex-start;
+    justify-content: space-between;
+    align-self: center;
+    width: 93%;
+    height: 40%;
+}
+.book-img{
+    @include flex-col;
+    width: 170px;
+    height: 200px;
+    background-color: $white;
+}
+.book-text{
+    @include flex-col;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 50%;
+    height: 64%;
+}
+.book-text h1{
+    @include flex-row;
+    width: $full;
+    height: 10%;
+    font-size: 5.5vw;
+}
+.book-text p{
+    @include flex-row;
+    height: 22%;
+    font-size: 4vw;
+}
+.bprice{
+    @include flex-row;
+    height: 10%;
+    font-size: 5vw;
+    font-weight: bold;
+    color: #d10c58;
+}
+.bbtn{
+    @include flex-row;
+    justify-content: center;
+    text-align: center;
+    height: 23%;
+    width: 60%;
+    background-color: $yellow;
+    color: $black;
+    font-weight: bold;
+    font-size: 3.5vw;
+    border-radius: 18px;
+    border: none;
+    box-shadow: 0 2px 2px $black;
+    cursor: pointer;
+}
+.bbtn:hover{
+    @include btn-hover;
+}
+.book-desc{
+    @include flex-col;
+    justify-content: space-between;
+    width: $full;
+    height: 35%;
+}
+.book-desc .bdesc{
+    width: $full;
+    padding-left: 7px;
+}
+.book-desc p{
+    width: 95%;
+    height: 89%;
+    font-family: Corbel;
+    font-size: 4vw;
+}
+.auth-img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: $yellow;
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 480px){
+    .book-text h1{
+        font-size: 5vw;
+    }
+    .book-text p{
+        height: 27%;
+        font-size: 3.3vw;
+    }
+    .bbtn{
+        font-size: 3.2vw;
+    }
+    .book-desc p{
+        font-size: 3.4vw;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 600px){
+    .book-text h1{
+        font-size: 4.5vw;
+    }
+    .book-text p{
+        height: 30%;
+        font-size: 3vw;
+    }
+    .bbtn{
+        font-size: 2.6vw;
+        width: 50%;
+    }
+    .book-desc .bdesc{
+        padding-left: 10px;
+    }
+    .book-desc p{
+        font-size: 3vw;
+    }
+    .auth-img{
+        width: 180px;
+        height: 180px;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 720px){
+    .book-text h1{
+        font-size: 4vw;
+    }
+    .book-text p{
+        height: 35%;
+        font-size: 2.5vw;
+    }
+    .bbtn{
+        font-size: 2.2vw;
+        width: 45%;
+    }
+    .book-desc .bdesc{
+        padding-left: 12px;
+    }
+    .book-desc p{
+        width: 96%;
+        font-size: 2.5vw;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 850px){
+    .book-text h1{
+        font-size: 3.7vw;
+    }
+    .book-text p{
+        font-size: 2.2vw;
+    }
+    .bbtn{
+        font-size: 1.9vw;
+        width: 37%;
+        height: 25%;
+    }
+    .book-desc .bdesc{
+        padding-left: 15px;
+    }
+    .book-desc p{
+        width: 95%;
+        height: 87%;
+        font-size: 2.1vw;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 960px){
+    .book-text h1{
+        font-size: 3vw;
+    }
+    .book-text p{
+        font-size: 1.8vw;
+    }
+    .bbtn{
+        font-size: 1.5vw;
+        width: 35%;
+        height: 25%;
+    }
+    .book-desc p{
+        font-size: 1.8vw;
+    }
+    .book-img{
+        width: 200px;
+        height: 240px;
+    }
+    .auth-img{
+        width: 190px;
+        height: 190px;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 1140px){
+    .book-text h1{
+        font-size: 2.6vw;
+    }
+    .book-text p{
+        font-size: 1.6vw;
+    }
+    .bbtn{
+        font-size: 1.3vw;
+        width: 33%;
+        height: 27%;
+    }
+    .book-desc p{
+        font-size: 1.5vw;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 1300px){
+    .book-text h1{
+        font-size: 2.2vw;
+    }
+    .book-text p{
+        font-size: 1.4vw;
+    }
+    .bbtn{
+        font-size: 1.2vw;
+        width: 27%;
+        height: 28%;
+    }
+    .book-desc p{
+        font-size: 1.3vw;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 1500px){
+    .book-img{
+        width: 225px;
+        height: 260px;
+    }
+    .book-text h1{
+        font-size: 2vw;
+    }
+    .book-text p{
+        font-size: 1.2vw;
+    }
+    .bbtn{
+        font-size: 1.1vw;
+        width: 25%;
+        height: 29%;
+    }
+    .book-desc p{
+        font-size: 1.15vw;
+    }
+    .auth-img{
+        width: 220px;
+        height: 220px;
+    }
+}
