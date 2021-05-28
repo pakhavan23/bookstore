@@ -1,0 +1,139 @@
+@import "utils";
+
+.historyc{
+    @include flex-row;
+    flex-flow: row wrap;
+    align-self: center;
+    overflow: auto;
+    position: relative;
+    height: 86%;
+    width: 93%;
+    margin-top: 14px;
+}
+.hitem{
+    @include flex-col;
+    width: 35%;
+    height: 23%;
+    background-color: #f8ea68e7;
+    box-shadow: 0 2px 4px #525151;
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+.hitem:hover{
+    @include btn-hover;
+}
+.hitem h3 , .hitem p{
+    @include flex-col;
+    justify-content: center;
+    height: 28%;
+    width: $full;
+    font-family: Corbel;
+    font-weight: bold;
+    font-size: 4vw;
+    text-align: center;
+}
+.hitem p{
+    height: 55%;
+    font-size: 3.7vw;
+    font-weight:normal;
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 480px){
+    .hitem{
+        height: 28%;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 600px){
+    .hitem{
+        height: 32%;
+    }
+    .hitem h3{
+        font-size: 3.5vw;
+    }
+    .hitem p{
+        font-size: 3.2vw;
+        padding: 0 8px;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 720px){
+    .hitem{
+        width: 28%;
+        height: 34%;
+    }
+    .hitem h3{
+        font-size: 3vw;
+    }
+    .hitem p{
+        font-size: 2.5vw;
+        padding: 0 10px;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 720px){
+    .hitem{
+        width: 28%;
+        height: 34%;
+    }
+    .hitem h3{
+        font-size: 3vw;
+    }
+    .hitem p{
+        font-size: 2.5vw;
+        padding: 0 10px;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 960px){
+    .hitem{
+        width: 28%;
+        height: 36%;
+    }
+    .hitem h3{
+        font-size: 2.6vw;
+    }
+    .hitem p{
+        font-size: 2.1vw;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 1140px){
+    .hitem{
+        width: 24%;
+        height: 39%;
+    }
+    .hitem h3{
+        font-size: 2.2vw;
+    }
+    .hitem p{
+        font-size: 1.75vw;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 1300px){
+    .hitem{
+        width: 23%;
+        height: 41%;
+    }
+    .hitem h3{
+        font-size: 1.9vw;
+    }
+    .hitem p{
+        font-size: 1.5vw;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 1300px){
+    .hitem{
+        width: 20%;
+        height: 43%;
+    }
+    .hitem h3{
+        font-size: 1.6vw;
+    }
+    .hitem p{
+        font-size: 1.2vw;
+    }
+}

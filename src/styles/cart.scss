@@ -1,0 +1,216 @@
+@import "utils";
+
+.prs{
+    @include flex-col;
+    align-self: center;
+    height: 75%;
+    width: 92%;
+    margin-top: 15px;
+    overflow: auto;
+}
+.prs-item{
+    @include flex-row;
+    justify-content: space-between;
+    width: $full;
+    min-height: 17%;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #ffffff5b;
+}
+.prs-img{
+    @include flex-row;
+    align-self: flex-start;
+    width: 52px;
+    height: 60px;
+    background-color: $white;
+}
+.prs-text{
+    @include flex-col;
+    align-items: flex-start;
+    align-self: flex-start;
+    height: 70%;
+    width: 70%;
+}
+.prs-text h3 , .prs-text p{
+    @include flex-col;
+    align-items: flex-start;
+    width: $full;
+    height: 50%;
+    font-weight: 600;
+    font-size: 5vw;
+}
+.prs-text p{
+    font-size: 4.3vw;
+    font-weight: bold;
+    color: $orange;
+}
+.prs-btn{
+    @include flex-col;
+    justify-content: space-evenly;
+    align-self: center;
+    height: 14%;
+    width: 90%;
+}
+.prs-btn p{
+    @include flex-col;
+    height: 30%;
+    width: $full;
+    font-weight: 600;
+    font-size: 4vw;
+    color: $orange;
+}
+.prsb{
+    height: 40%;
+    width: 32%;
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 480px){
+    .prs{
+        margin-top: 25px;
+        height: 72%;
+    }
+    .prs-item{
+        height: 20.5%;
+    }
+    .prs-img{
+        width: 70px;
+        height: 84px;
+    }
+    .prs-text h3{
+        font-size: 4.3vw;
+    }
+    .prs-text p{
+        font-size: 3.5vw;
+    }
+    .prs-btn p{
+        font-size: 3.5vw;
+    }
+    .prsb{
+        width: 28%;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 600px){
+    .prs{
+        height: 71%;
+    }
+    .prs-item{
+        height: 23%;
+    }
+    .prs-img{
+        width: 76px;
+        height: 91px;
+    }
+    .prs-text{
+        height: 64%;
+    }
+    .prs-text h3{
+        font-size: 3.9vw;
+    }
+    .prs-text p{
+        font-size: 3vw;
+    }
+    .prs-btn{
+        height: 15%;
+    }
+    .prs-btn p{
+        font-size: 3vw;
+    }
+    .prsb{
+        width: 25%;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 720px){
+    .prs{
+        margin-top: 30px;
+    }
+    .prs-item{
+        height: 25%;
+    }
+    .prs-img{
+        width: 80px;
+        height: 100px;
+    }
+    .prs-text h3{
+        font-size: 3.2vw;
+    }
+    .prs-text p{
+        font-size: 2.5vw;
+    }
+    .prs-btn p{
+        font-size: 2.5vw;
+    }
+    .prsb{
+        width: 21%;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 960px){
+    .prs{
+        height: 72%;
+        margin-top: 17px;
+    }
+    .prs-item{
+        height: 27%;
+    }
+    .prs-img{
+        width: 85px;
+        height: 110px;
+    }
+    .prs-text h3{
+        font-size: 2.5vw;
+    }
+    .prs-text p{
+        font-size: 2vw;
+    }
+    .prs-btn p{
+        font-size: 2vw;
+    }
+    .prsb{
+        width: 18%;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 1140px){
+    .prs-item{
+        height: 28%;
+    }
+    .prs-img{
+        width: 90px;
+        height: 115px;
+    }
+    .prs-text h3{
+        font-size: 2vw;
+    }
+    .prs-text p{
+        font-size: 1.7vw;
+    }
+    .prs-btn p{
+        font-size: 1.7vw;
+    }
+    .prsb{
+        width: 16%;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------*/
+@media screen and (min-width: 1500px){
+    .prs-item{
+        height: 30%;
+    }
+    .prs-img{
+        width: 102px;
+        height: 125px;
+    }
+    .prs-text h3{
+        font-size: 1.6vw;
+    }
+    .prs-text p{
+        font-size: 1.3vw;
+    }
+    .prs-btn p{
+        font-size: 1.2vw;
+    }
+    .prsb{
+        width: 13%;
+    }
+}

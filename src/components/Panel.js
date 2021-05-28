@@ -4,6 +4,8 @@ import search from '../images/search.png';
 import Results from './Results';
 import Book from './Book';
 import Profile from './Profile';
+import History from './History';
+import Cart from  './Cart';
 import '../styles/panel.scss';
 
 const Panel = () => {
@@ -24,8 +26,8 @@ const Panel = () => {
                     <h3>Name</h3>
                     <section className="sitems">
                         <span className="sitem" onClick={() => changeComponent('profile')}>Profile</span>
-                        <span className="sitem">Cart</span>
-                        <span className="sitem">History</span>
+                        <span className="sitem" onClick={() => changeComponent('cart')}>Cart</span>
+                        <span className="sitem" onClick={() => changeComponent('history')}>History</span>
                         <span className="sitem">Sign out</span>
                     </section>
                 </section>
@@ -114,6 +116,10 @@ const Panel = () => {
                     <Book />
                 :component === 'profile' ?
                     <Profile />
+                :component === 'history' ?
+                    <History />
+                :component === 'cart' ?
+                    <Cart />
                 : null
                 }
             </section>
