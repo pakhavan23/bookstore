@@ -16,6 +16,9 @@ const Panel = () => {
     return(
         <section className="wrapper panel-wrapper">
             <section className="panel" onClick={toggle ? () => toggleMenu(false) : null}>
+                {component !== 'panel' ? 
+                    <span className="pback" onClick={() => changeComponent('panel')}>Back to panel</span> : null
+                }
                 <section className="profilepic" onClick={() => toggleMenu(true)}>
 
                 </section>
