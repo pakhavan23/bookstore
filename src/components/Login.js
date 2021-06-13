@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link , Redirect } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
+import axios from 'axios';
 import home from '../images/home.png';
 import 'react-toastify/dist/ReactToastify.css';
 import '../styles/login.scss';
@@ -11,7 +12,8 @@ class Login extends React.Component{
         super(props);
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            done: false
         }
     }
 
@@ -39,13 +41,41 @@ class Login extends React.Component{
             }
         }
         else{
-            toast("You're successfully logged in!" , {
-                type: "success"
-            })
+            this.submitInfo();
         }
     }
 
+    submitInfo = () => {
+        axios.post('http://localhost:5000/auth/login' , {
+            "username": this.state.username,
+            "user_password": this.state.password,
+        })
+        .then((response) => {
+            toast("You're successfully logged in!" , {
+                type: "success"
+            })
+            document.cookie = "token=" + response.data.token + "; path=/;"
+            document.cookie = "username=" + response.data.data.user.username + "; path=/"
+        })
+        .catch((error) => {
+            toast("Error! Please try again.." , {
+                type: "error"
+            })
+            console.error(error);
+        })
+        .finally(() => {
+            setInterval(() => {
+                this.setState({
+                    done: true
+                })
+            } , 3000)
+        })
+    }
+
     render(){
+        if(this.state.done){
+            return <Redirect to="/panel" />
+        }
         return(
             <section className="wrapper rg-wrapper">
                 <form className="register" onSubmit={this.sendInfo}>

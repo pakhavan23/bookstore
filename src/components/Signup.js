@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link , Redirect } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
+import axios from 'axios';
 import home from '../images/home.png';
 import 'react-toastify/dist/ReactToastify.css';
 import '../styles/signup.scss';
@@ -17,7 +18,8 @@ class Signup extends React.Component{
             phoneNumber: '',
             address: '',
             password: '',
-            passwordRepeat: ''
+            passwordRepeat: '',
+            done: false
         }
     }
 
@@ -70,13 +72,45 @@ class Signup extends React.Component{
             }
         }
         else{
-            toast("You're successfully logged in!" , {
-                type: "success"
-            })
+            this.submitInfo();
         }
     }
 
+    submitInfo = () => {
+        axios.post('http://localhost:5000/auth/signup' , {
+            "username": this.state.username,
+            "user_password": this.state.password,
+            "first_name": this.state.firstName,
+            "last_name": this.state.lastName,
+            "email": this.state.email,
+            "phone_number": this.state.phoneNumber,
+            "address": this.state.address
+        })
+        .then((response) => {
+            toast("You're successfully registered!" , {
+                type: "success"
+            })
+            document.cookie = "token=" + response.token + "; path=/;"
+        })
+        .catch((error) => {
+            toast("Error! Please try again.." , {
+                type: "error"
+            })
+            console.error(error);
+        })
+        .finally(() => {
+            setInterval(() => {
+                this.setState({
+                    done: true
+                })
+            } , 3000)
+        })
+    }
+
     render(){
+        if(this.state.done){
+            return <Redirect to="/panel" />
+        }
         return(
             <section className="wrapper rg-wrapper">
                 <form className="register" onSubmit={this.sendInfo}>

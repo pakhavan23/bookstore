@@ -2,18 +2,22 @@ import React, { useState } from 'react';
 import book from '../images/book.png';
 import search from '../images/search.png';
 import Results from './Results';
+import Recent  from './Recent';
 import Book from './Book';
 import Profile from './Profile';
 import History from './History';
 import Cart from  './Cart';
 import '../styles/panel.scss';
 
-const Panel = () => {
+
+const Panel = (props) => {
 
     const[toggle , toggleMenu] = useState('');
     const[component , changeComponent] = useState('panel');
+    const[type, changeType] = useState('all');
+    const[keyword , addKeyword] = useState('');
 
-    return(
+     return(
         <section className="wrapper panel-wrapper">
             <section className="panel" onClick={toggle ? () => toggleMenu(false) : null}>
                 {component !== 'panel' ? 
@@ -39,8 +43,8 @@ const Panel = () => {
                       <h1 className="ptitle1">What do you want to read?</h1>
                       <section className="psearch">
                           <section className="psbar">
-                              <textarea placeholder="Search it here!"></textarea>
-                              <img src={search} />
+                              <textarea placeholder="Search it here!" onChange={(event) => addKeyword(event.target.value)}></textarea>
+                              <img src={search} onClick={() => changeComponent('results')} />
                           </section>
                       </section>
                       <section className="pcat">
@@ -49,74 +53,43 @@ const Panel = () => {
                                       <img src={book} />
                                       <p>All Books</p>
                                   </span>
-                                  <span className="pitem" onClick={() => changeComponent('results')}>
+                                  <span className="pitem" onClick={() => {changeComponent('results'); changeType('classic')}}>
                                       <img src={book} />
                                       <p>Classic</p>
                                   </span>
-                                  <span className="pitem" onClick={() => changeComponent('results')}>
+                                  <span className="pitem" onClick={() => {changeComponent('results'); changeType('romance')}}>
                                       <img src={book} />
                                       <p>Romance</p>
                                   </span>
-                                  <span className="pitem" onClick={() => changeComponent('results')}>
+                                  <span className="pitem" onClick={() => {changeComponent('results'); changeType('horror')}}>
                                       <img src={book} />
                                       <p>Horror</p>
                                   </span>
                               </section>
-                              <section className="prow" onClick={() => changeComponent('results')}>
-                                  <span className="pitem">
+                              <section className="prow">
+                                  <span className="pitem" onClick={() => {changeComponent('results'); changeType('fantasy')}}>
                                       <img src={book} />
                                       <p>Fantasy</p>
                                   </span>
-                                  <span className="pitem" onClick={() => changeComponent('results')}>
+                                  <span className="pitem" onClick={() => {changeComponent('results'); changeType('crime')}}>
                                       <img src={book} />
                                       <p>Crime</p>
                                   </span>
-                                  <span className="pitem" onClick={() => changeComponent('results')}>
+                                  <span className="pitem" onClick={() => {changeComponent('results'); changeType('fiction')}}>
                                       <img src={book} />
                                       <p>Fiction</p>
                                   </span>
-                                  <span className="pitem" onClick={() => changeComponent('results')}>
+                                  <span className="pitem" onClick={() => {changeComponent('results'); changeType('children')}}>
                                       <img src={book} />
                                       <p>Children</p>
                                   </span>
                               </section>
                       </section>
                       <h3 className="ptitle2">Recent purchases</h3>
-                      <section className="prec">
-                          <span className="prec-item" onClick={() => changeComponent('book')}>
-                              <section className="prec-img">
-  
-                              </section>
-                              <h3>Name</h3>
-                              <p>Price</p>
-                          </span>
-                          <span className="prec-item">
-                              <section className="prec-img">
-  
-                              </section>
-                              <h3>Name</h3>
-                              <p>Price</p>
-                          </span>
-                          <span className="prec-item">
-                              <section className="prec-img">
-  
-                              </section>
-                              <h3>Name</h3>
-                              <p>Price</p>
-                          </span>
-                          <span className="prec-item">
-                              <section className="prec-img">
-  
-                              </section>
-                              <h3>Name</h3>
-                              <p>Price</p>
-                          </span>
-                      </section>
+                      <Recent />
                     </section>
                 : component === 'results' ?
-                    <Results />
-                : component === 'book' ?
-                    <Book />
+                    <Results type={type} keyword={keyword} />
                 :component === 'profile' ?
                     <Profile />
                 :component === 'history' ?
